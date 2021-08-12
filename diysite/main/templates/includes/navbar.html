@@ -16,10 +16,15 @@
     </ul>
     <ul class="navbar-nav">
         <li><a href="/" class="nav-link"> <i class="fa fa-envelope"></i> Home </a></li>
-		<li><a href="#" class="nav-link"> <i class="fa fa-envelope"></i> Contact Us </a></li>
+		    <li><a href="#" class="nav-link"> <i class="fa fa-envelope"></i> Contact Us </a></li>
+        {% if user.is_authenticated %}
+        <li><a href="#" class="nav-link"> <i class="fa fa-envelope"></i> My Profile </a></li>
+        <li><a href="/logout" class="nav-link"> <i class="fa fa-envelope"></i> Logout </a></li>
+        {% else %}
         <li><a href="/login" class="nav-link"> <i class="fa fa-envelope"></i> Sign in </a></li>
         <li><a href="/register" class="nav-link"> <i class="fa fa-envelope"></i> Register </a></li>
         <li><a href="/admin" class="nav-link"> <i class="fa fa-envelope"></i> admin </a></li>
+        {% endif %}
 	</ul> <!-- list-inline //  -->
   </div> <!-- navbar-collapse .// -->
 </div> <!-- container //  -->
